@@ -7,7 +7,7 @@ RUN apt update && apt upgrade -y && apt install -y git curl python lsb-release s
 ## Layer v8 BootStrap
 RUN depot_tools/fetch v8 \ 
  && cd v8 \ 
- && echo "== git checkout branch-heads/10.8" \
+ && git checkout branch-heads/11.2 \
  && ../depot_tools/gclient sync 
 RUN build/install-build-deps.sh --no-syms --no-chromeos-fonts --no-arm --no-nacl --no-backwards-compatible
  && tools/dev/v8gen.py \
